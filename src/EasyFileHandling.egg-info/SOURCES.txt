@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+setup.cfg
+src/EasyFileHandling/__init__.py
+src/EasyFileHandling/main.py
+src/EasyFileHandling.egg-info/PKG-INFO
+src/EasyFileHandling.egg-info/SOURCES.txt
+src/EasyFileHandling.egg-info/dependency_links.txt
+src/EasyFileHandling.egg-info/top_level.txt

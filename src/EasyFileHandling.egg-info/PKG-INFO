@@ -1,0 +1,29 @@
+Metadata-Version: 2.1
+Name: EasyFileHandling
+Version: 1.0.1
+Summary: A simple and useful package for File Handling
+Home-page: https://github.com/ProjectsWithPython/FileHandling
+Author: Haider Ali
+Author-email: ali075398@gmail.com
+License: UNKNOWN
+Project-URL: Bug Tracker, https://github.com/ProjectsWithPython/ProjectsIssues
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+Package for File Handling
+
+**Getting started**
+```py
+from EasyFileHandling.main import FileHandler
+
+x = FileHandler('test.py', 'py')
+
+print(x.get_file_content()) 
+
+```
+
