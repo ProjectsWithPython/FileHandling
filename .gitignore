@@ -2,6 +2,6 @@ dist/
 src/EasyFileHandling/
 
 
-!pyproject.toml
+pyproject.toml
 
-!setup.cfg
+setup.cfg
