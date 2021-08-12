@@ -3,3 +3,5 @@ dist/
 pyproject.toml
 
 setup.cfg
+
+src/EasyFileHandling.egg-info
