@@ -70,6 +70,7 @@ class FileHandler:
     
         
 def change_file_name(path, new_name):
+    """Changes file name"""
     os.rename(path, new_name)
 
 
@@ -82,6 +83,7 @@ def delete(file):
 
 
 def create_file(file):
+    """Creates a file"""
     if os.path.exists(file):
         return False
     else:
@@ -92,12 +94,14 @@ def create_file(file):
 
 
 def list_item_in_dir(path) -> list:
+    """Gives a list of all items in the folder"""
     if os.path.exists(path):
         return os.listdir(path)
     else:
         raise FileNotFoundError('Folder Not Found!')
 
 def delete_all_item_in_dict(path):
+    """Deletes all items in the folder"""
     em = []
     if os.path.exists(path):
         for i in os.listdir(path):
@@ -107,3 +111,9 @@ def delete_all_item_in_dict(path):
     else:
         raise FileNotFoundError('Folder not found or wrong path.')
 
+def is_pythonfile(file):
+    """Returns True if file extension is py and if not then false."""
+    if file.endswith('py'):
+        return True
+    else: 
+        return False
