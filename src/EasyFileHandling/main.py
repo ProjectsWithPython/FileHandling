@@ -19,6 +19,14 @@ class FileHandler:
                 return _content
         except FileNotFoundError as err:
             return f'{self._filename} is not found, please enter the correct file!'
+    
+    def get_line_count(self):
+        """Returns number of lines in file"""
+        try:
+            num_lines = sum(1 for _ in open(self._filename))
+            return num_lines
+        except FileNotFoundError as err:
+            return f'{self._filename} is not found, please enter the correct file!'
 
     def change_file_content(self, new_content):
         """Changes whole file content"""
@@ -67,8 +75,7 @@ class FileHandler:
             return f"Please Report The Developers [ https://github.com/ProjectsWithPython/FileHandling/issues ]"
 
 
-    
-        
+
 def change_file_name(path, new_name):
     """Changes file name"""
     os.rename(path, new_name)
@@ -90,7 +97,6 @@ def create_file(file):
         with open(file, 'w') as f:
             f.write('File Created With FileHandler ©')
         return "Created File"
-
 
 
 def list_item_in_dir(path) -> list:
