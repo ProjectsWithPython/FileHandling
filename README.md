@@ -18,4 +18,7 @@ print(x.get_file_content()) # This will print file content.
 **Whats New?**
 
 
-*Version: `1.2.2`: In Version `1.2.2` Added New Methods for `FileHandler` class also new functions. Please let us know all the issues you're getting [Here](https://github.com/ProjectsWithPython/FileHandling) and all the issues [Here](https://github.com/ProjectsWithPython/FileHandling/issues)*
+*Version: `1.3.0`: In version `1.3.0` we have added a new method for `FileHandler` class called `is_file_writeable` simply it returns a boolean and tells if file is readable or not. If you are having any issues let us know [Here](https://github.com/ProjectsWithPython/FileHandling/issues).*
+
+
+

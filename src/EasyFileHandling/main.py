@@ -1,4 +1,5 @@
 import os
+import io
 
 
 class FileHandler:
@@ -58,6 +59,17 @@ class FileHandler:
             return 'Done!'
         except:
             return f"Please Report The Developers [ https://github.com/ProjectsWithPython/FileHandling/issues ]"
+
+    def is_file_writeable(self) -> bool:
+        """Tells you if the file is writeable"""
+        with open(f'{self._filename}.{self._extension}') as f:
+            if f.writable():
+                return True
+            else:
+                return False
+    
+    
+
 
 
 def change_file_name(path, new_name):
