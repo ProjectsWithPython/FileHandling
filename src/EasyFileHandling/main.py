@@ -46,7 +46,8 @@ class FileHandler:
                      '.sql': 'SQL', '.ts': 'TypeScript',
                      '.json': 'JSON', '.csv': 'CSV',
                      '.html': 'HTML', '.css': 'CSS',
-                     '.rb': 'Ruby', '.swift': 'Swift'}
+                     '.rb': 'Ruby', '.swift': 'Swift',
+                     '.txt': 'Text'}
 
         if self._extension not in fileTypes:
             return "Unknown file/extension. Please Report The Developers [ https://github.com/ProjectsWithPython/FileHandling/issues ]"
@@ -62,7 +63,7 @@ class FileHandler:
 
     def is_file_writeable(self) -> bool:
         """Tells you if the file is writeable"""
-        with open(f'{self._filename}.{self._extension}') as f:
+        with open(f'{self._filename}', 'w') as f:
             if f.writable():
                 return True
             else:
