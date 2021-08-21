@@ -25,8 +25,9 @@ class FileHandler:
     def get_line_count(self) -> Union[int, str]:
         """Returns number of lines in file"""
         try:
-            num_lines = sum(1 for _ in open(self._filename))
-            return num_lines
+            with open(self._filename, 'r') as f:
+                num_lines = sum(1 for _ in f)
+                return num_lines
         except FileNotFoundError as err:
             return f'{self._filename} is not found, please enter the correct file!'
 
