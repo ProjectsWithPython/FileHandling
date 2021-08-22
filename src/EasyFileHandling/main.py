@@ -1,19 +1,20 @@
 import os
 import io
+from typing import Union
 
 
 class FileHandler:
-    def __init__(self, _filename):
+    def __init__(self, _filename: str) -> None:
         self._filename = _filename
         self._extension = _filename[_filename.rfind('.'):]
 
-    def does_file_exist(self):
+    def does_file_exist(self) -> bool:
         if os.path.exists(self._filename):
             return True
         else:
             return False
 
-    def get_file_content(self):
+    def get_file_content(self) -> str:
         try:
             with open(self._filename, 'r') as f:
                 _content = f.read()
@@ -21,23 +22,36 @@ class FileHandler:
         except FileNotFoundError as err:
             return f'{self._filename} is not found, please enter the correct file!'
 
-    def get_line_count(self):
+    def get_line_count(self) -> Union[int, str]:
         """Returns number of lines in file"""
         try:
-            num_lines = sum(1 for _ in open(self._filename))
-            return num_lines
+            with open(self._filename, 'r') as f:
+                num_lines = sum(1 for _ in f)
+                return num_lines
         except FileNotFoundError as err:
             return f'{self._filename} is not found, please enter the correct file!'
 
-    def change_file_content(self, new_content):
+    def change_file_content(self, new_content: Union[str, bytes, bytearray]) -> None:
         """Changes whole file content"""
-        with open(self._filename, 'w') as f:
-            f.write(new_content)
+        if isinstance(new_content, (bytes, bytearray)):
+            with open(self._filename, 'wb') as f:
+                f.write(new_content)
+        elif isinstance(new_content, str):
+            with open(self._filename, 'w') as f:
+                f.write(new_content)
+        else:
+            raise TypeError('Content must be string or bytes type object')
 
-    def add_something_to_file_content(self, content):
+    def add_something_to_file_content(self, content: Union[str, bytes]) -> None:
         """Appends content to end of the file!"""
-        with open(self._filename, 'a') as f:
-            f.write(content)
+        if isinstance(content, (bytes, bytearray)):
+            with open(self._filename, 'ab') as f:
+                f.write(content)
+        elif isinstance(content, str):
+            with open(self._filename, 'a') as f:
+                f.write(content)
+        else:
+            raise TypeError('Content must be string or bytes type object')
 
     def what_type_of_file(self) -> str:
         """Tells you what type of file is it."""
@@ -54,7 +68,7 @@ class FileHandler:
         else:
             return f'This is a {fileTypes[self._extension]} file.'
 
-    def change_file_extension(self, current_extension, new_extension):
+    def change_file_extension(self, current_extension: str, new_extension: str) -> str:
         try:
             os.name(self._filename, self._filename.replace(rf'[{current_extension}]', f'{new_extension}'))
             return 'Done!'
@@ -73,12 +87,12 @@ class FileHandler:
 
 
 
-def change_file_name(path, new_name):
+def change_file_name(path: str, new_name: str) -> None:
     """Changes file name"""
     os.rename(path, new_name)
 
 
-def delete(file):
+def delete(file: str) -> Union[str, None]:
     """Deletes file"""
     if os.path.exists(file):
         os.remove(file)
@@ -86,7 +100,7 @@ def delete(file):
         return f"{file} does not exists. Make sure the name is correct or you need to put the file path."
 
 
-def create_file(file):
+def create_file(file: str) -> Union[bool, None]:
     """Creates a file"""
     if os.path.exists(file):
         return False
@@ -104,7 +118,7 @@ def list_item_in_dir(path) -> list:
         raise FileNotFoundError('Folder Not Found!')
 
 
-def delete_all_item_in_dict(path):
+def delete_all_item_in_dict(path: str) -> list:
     """Deletes all items in the folder"""
     em = []
     if os.path.exists(path):
@@ -116,7 +130,7 @@ def delete_all_item_in_dict(path):
         raise FileNotFoundError('Folder not found or wrong path.')
 
 
-def is_pythonfile(file):
+def is_pythonfile(file: str) -> bool:
     """Returns True if file extension is py and if not then false."""
     if file.endswith('py'):
         return True
