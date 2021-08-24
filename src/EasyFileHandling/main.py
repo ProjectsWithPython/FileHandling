@@ -2,7 +2,7 @@ import os
 import io
 from typing import Union
 import json
-from errors.error import FolderNotFound, NotStringOrBytes
+from errors.error import *
 
 
 class FileHandler:
