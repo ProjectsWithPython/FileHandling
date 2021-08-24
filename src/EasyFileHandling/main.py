@@ -1,6 +1,7 @@
 import os
 import io
 from typing import Union
+import json
 
 
 class FileHandler:
@@ -82,7 +83,31 @@ class FileHandler:
                 return True
             else:
                 return False
+
+
+class JsonHandler:
+    """JsonHandler it reads, converts and writes but remeber file should be json only!"""
+    def __init__(self, _filename):
+        self._filename = _filename
     
+    def write_to_json(self, obj: Union[dict, list]) -> None:
+        """Writes to json file"""
+        with open(self._filename, 'w') as f:
+            json.dump(obj, f)
+
+    def append_to_json(self, obj: Union[dict, list]) -> None:
+        """Writes to json file"""
+        with open(self._filename, 'a') as f:
+            json.dump(obj, f)
+
+    def read_json_file(self) -> Union[dict, list]:
+        with open(self._filename, 'r') as f:
+            x = json.load(f)
+            return x
+    
+
+
+
     
 
 

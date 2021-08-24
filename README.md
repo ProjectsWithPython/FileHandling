@@ -17,8 +17,23 @@ print(x.get_file_content()) # This will print file content.
 
 **Whats New?**
 
+*Howdy, new version `1.4.0` just dropped. You all be thinking whats new `byte` and `json` support added. We have also added `type` hints. Let me show you a example how json handler works*
 
-*Version: `1.3.0`: In version `1.3.0` we have added a new method for `FileHandler` class called `is_file_writeable` simply it returns a boolean and tells if file is readable or not. If you are having any issues let us know [Here](https://github.com/ProjectsWithPython/FileHandling/issues).*
+
+**JsonHandler**
+
+
+```py
+from EasyFileHandling.main import JsonHandler
+my_obj = [
+    {'Sad': 100}
+]
+x = JsonHandler('sad.json')
+x.write_to_json(obj)
+```
+
+
+*If you are having any issues let us know [Here](https://github.com/ProjectsWithPython/FileHandling/issues).*
 
 
 
