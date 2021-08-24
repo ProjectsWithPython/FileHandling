@@ -2,6 +2,10 @@ import os
 import io
 from typing import Union
 import json
+from errors.error import *
+
+
+
 
 
 class FileHandler:
@@ -41,7 +45,7 @@ class FileHandler:
             with open(self._filename, 'w') as f:
                 f.write(new_content)
         else:
-            raise TypeError('Content must be string or bytes type object')
+            raise NotStringOrBytes()
 
     def add_something_to_file_content(self, content: Union[str, bytes]) -> None:
         """Appends content to end of the file!"""
@@ -52,7 +56,7 @@ class FileHandler:
             with open(self._filename, 'a') as f:
                 f.write(content)
         else:
-            raise TypeError('Content must be string or bytes type object')
+            raise NotStringOrBytes()
 
     def what_type_of_file(self) -> str:
         """Tells you what type of file is it."""
@@ -140,7 +144,7 @@ def list_item_in_dir(path) -> list:
     if os.path.exists(path):
         return os.listdir(path)
     else:
-        raise FileNotFoundError('Folder Not Found!')
+        raise FolderNotFound()
 
 
 def delete_all_item_in_dict(path: str) -> list:
@@ -152,7 +156,7 @@ def delete_all_item_in_dict(path: str) -> list:
             em.append(i)
         return em
     else:
-        raise FileNotFoundError('Folder not found or wrong path.')
+        raise FolderNotFound()
 
 
 def is_pythonfile(file: str) -> bool:
