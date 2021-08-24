@@ -1,3 +1,6 @@
+# All Errors
+
+
 class FolderNotFound(Exception):
     def __init__(self, message = "Folder or path not found"):
         self.message = message
