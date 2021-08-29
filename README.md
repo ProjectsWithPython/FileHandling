@@ -15,6 +15,22 @@ print(x.get_file_content()) # This will print file content.
 *This lets you use `os` module easily not all features but some of them.
 
 
+**BETA**
+
+*Howdy all, we have decided to add `AsyncFileHandler` for asynchronous python codes. Now you can do all those `append`, `write` and  `read` asynchronouly.* ***REMEMBER THIS IS A BETA***
+
+
+*How do I use it?*
+
+
+*Simply import this and get started.*
+
+
+```py
+from EasyFileHandling.beta.main import AsyncFileHandler
+```
+
+
 **Whats New?**
 
 *Howdy, new version `1.4.0` just dropped. You all be thinking whats new `byte` and `json` support added. We have also added `type` hints. Let me show you a example how json handler works*
