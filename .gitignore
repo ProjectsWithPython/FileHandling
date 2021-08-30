@@ -6,3 +6,7 @@ pyproject.toml
 setup.cfg
 
 src/EasyFileHandling.egg-info
+
+.vscode/
+
+.flake8
