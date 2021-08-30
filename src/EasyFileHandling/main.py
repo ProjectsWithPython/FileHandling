@@ -33,7 +33,8 @@ class FileHandler:
         except FileNotFoundError:
             return f"{self._filename} is not found, please enter the correct file!"
 
-    def get_longest_line(self) -> Union[int, str]:
+    def get_longest_line(self) -> None:
+        """Prints longest line length and line indices of lines with that length"""
         with open(self._filename, "r") as f:
             try:
                 lines = f.readlines()
