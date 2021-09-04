@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
     <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
-<body>
+<body style="margin: 0;">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">EasyFileHandling 1.4.6</a>
@@ -23,147 +23,36 @@
                 <a class="nav-link" href="./index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="./features.html">Features</a>
+                <a class="nav-link active" aria-current="page" href="./features.html">Features</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./whatsnew.html">Whats New?</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link active" href="./docs.html">Documentation</a>
+                  <a class="nav-link" href="./docs.html">Documentation</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      <h1 class="text-center docsop">Documentation</h1>
+    <div class="container-docs-intro animate__animated animate__zoomInDown">
+        <div class="card">
+            <img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/165px-Python-logo-notext.svg.png">
+            <div>
+                <p>This is the documentation for python package, <a class="a-none" href="./pythondocs.html">Click to read</a></p>
 
-      <h3 class="text-center">FileHandler</h3>
-      <div class="docs">
-          <div class="doc-info">
-            <h4>does_file_exist(<i>self</i>)</h4>
-            <p><b>Returns:</b> bool</p>
-            <p><b>Description: </b> As name itself describes it, it returns True if file exists and returns False if file doesn't exists.</p>
-          </div>
-
-          <div class="doc-info">
-            <h4>get_file_content(<i>self</i>)</h4>
-            <p><b>Returns:</b> str</p>
-            <p><b>Description:</b>Returns all content in file</p>
-          </div>
-
-          <div class="doc-info">
-              <h4>get_line_count(<i>self</i>)</h4>
-              <p><b>Returns: </b>Union[str, int]</p>
-              <p><b>Description: </b>Returns number of lines in the file</p>
-          </div>
-
-            <div class="doc-info">
-                <h4>get_longest_line(<i>self</i>)</h4>
-                <p><b>Returns: </b>str</p>
-                <p><b>Description: </b>Returns longest line length and line indices of lines with that length</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>change_file_content(<i>self</i>, new_content: Union[str, bytes, bytearray])</h4>
-                <p><b>Returns:</b>None</p>
-                <p><b>Description</b>Changes whole file content</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>add_something_to_file_content(<i>self</i>, content: Union[str, bytes])</h4>
-                <p><b>Returns: </b>None</p>
-                <p><b>Description: </b>Appends content to end of the file!</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>what_type_of_file(<i>self</i>)</h4>
-                <p><b>Returns: </b>str</p>
-                <p><b>Description: </b>Tells you what type of file is it.</p>
-            </div>
-            <div class="doc-info">
-                <h4>change_file_extension(self, current_extension: str, new_extension: str)</h4>
-                <p><b>Returns: </b>str</p>
-                <p><b>Description: </b>Changes file extension</p>
-            </div>
-            <div class="doc-info">
-                <h4>is_file_writeable(<i>self</i>)</h4>
-                <p><b>Returns: </b>bool</p>
-                <p><b>Description: </b>Tells you if file is writeable</p>
-            </div>
-
-            <div class="buffer"></div>
-            <h3 class="text-center">JsonHandler</h3>
-
-            <div class="doc-info">
-                <h4>write_to_json(<i>self</i>, obj: Union[dict, list])</h4>
-                <p><b>Returns: </b>None</p>
-                <p><b>Description: </b>Writes to json file</p>
-            </div>
-            <div class="doc-info">
-                <h4>append_to_json(<i>self</i>, obj: Union[dict, list])</h4>
-                <p><b>Returns: </b>None</p>
-                <p><b>Description: </b>Appends to json file</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>read_json_file(self) -> Union[dict, list]</h4>
-                <p><b>Returns: </b>Union[dict, list]</p>
-                <p><b>Description: </b>Reads the the JSON file and returns that data in python data structures</p>
-            </div>
-
-            <div class="buffer"></div>
-            <h3 class="text-center">Side Funcations</h3>
-            <div class="doc-info">
-                <h4>change_file_name(path: str, new_name: str)</h4>
-                <p><b>Returns: </b>None</p>
-                <p><b>Description: </b>Changes file name</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>create_file(file: str)</h4>
-                <p><b>Returns: </b>Union[str, bool, None]</p>
-                <p><b>Description: </b>Creates a file</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>delete(file: str)</h4>
-                <p><b>Returns: </b>Union[str, None]</p>
-                <p><b>Description: </b>Deletes file</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>list_item_in_dir(path)</h4>
-                <p><b>Returns: </b>list</p>
-                <p><b>Description: </b>Gives a list of all items in the folder</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>delete_all_item_in_dict(path: str)</h4>
-                <p><b>Returns: </b>list</p>
-                <p><b>Description: </b>Deletes all items in the folder</p>
-            </div>
-
-            <div class="doc-info">
-                <h4>is_pythonfile(file: str)</h4>
-                <p><b>Returns: </b>bool</p>
-                <p><b>Description: </b>Returns True if file extension is py and if not then false.</p>
             </div>
         </div>
 
-        <div class="ending">
-            <ul class="">
-                <li class="li"><a href="https://github.com/ProjectsWithPython/FileHandling">Github for python</a></li>
-                <li class="li"><a href="https://github.com/Haider-Ali-Dev/easyfilehandler.js">Github for javascript</a></li>
-                <li class="li"><a href="https://pypi.org/project/EasyFileHandling/">Npm Package</a></li>
-                <li class="li"><a href="https://www.npmjs.com/package/easyfilehandler.js">Pypi Package</a></li>
-            </ul>
-            <div class="buffer"></div>
-    
-            <footer>
-                <div class="footer">
-                    © 2021 Copyright: EasyFileHandling
-                </div>
-            </footer>
+        <div class="card">
+            <img class="img-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/2048px-Unofficial_JavaScript_logo_2.svg.png">
+            <div>
+                <p>This is the documentation for javascript package, <a class="a-none" href="./javasciptdocs.html">Click to read</a></p>
+            </div>
         </div>
+    </div>
+
 
 <script type="text/javascript" src="./script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>

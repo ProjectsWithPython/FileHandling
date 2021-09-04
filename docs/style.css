@@ -125,3 +125,38 @@ body {
 .new {
     margin: 20px;
 }
+
+.a-none {
+    text-decoration: none;
+    color: #171717;
+}
+
+.a-none:hover {
+    color: blue;
+    text-decoration: underline;
+}
+
+.container-docs-intro {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: auto;
+    border: 10px solid lightblue;
+    border-radius: 100px;
+    padding: 30px;
+    background-color: lightblue;
+}
+
+
+.docsop {
+    color: grey;
+}

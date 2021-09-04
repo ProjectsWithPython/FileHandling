@@ -55,7 +55,7 @@ class FileHandler:
                 if len(line) == longest_line:
                     longest_index_list.append(index)
 
-            print(f'Longest line is {longest_line} at line index of {longest_index_list}')
+            return f'Longest line is {longest_line} at line index of {longest_index_list}'
 
     def change_file_content(self, new_content: Union[str, bytes, bytearray]) -> None:
         """Changes whole file content"""
@@ -108,7 +108,7 @@ class FileHandler:
                 self._filename,
                 self._filename.replace(rf"[{current_extension}]", f"{new_extension}"),
             )
-            return "Done!"
+            return 'Done!'
         except:
             return f"Please Report The Developers [ https://github.com/ProjectsWithPython/FileHandling/issues ]"
 
@@ -133,7 +133,7 @@ class JsonHandler:
             json.dump(obj, f)
 
     def append_to_json(self, obj: Union[dict, list]) -> None:
-        """Writes to json file"""
+        """Appends to json file"""
         with open(self._filename, "a") as f:
             json.dump(obj, f)
 
