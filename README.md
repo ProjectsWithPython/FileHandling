@@ -1,5 +1,8 @@
 ### Package for File Handling
 
+**[DOCUMENTATION]**(https://filehandling.netlify.app/docs.html)
+
+
 **Getting started**
 ```py
 from EasyFileHandling.main import FileHandler

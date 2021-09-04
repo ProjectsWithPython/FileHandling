@@ -1,7 +1,6 @@
 import os
 from typing import Union
 import json
-
 from EasyFileHandling.errors.error import ZeroLineFile
 
 
