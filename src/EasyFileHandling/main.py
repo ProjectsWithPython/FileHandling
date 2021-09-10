@@ -1,7 +1,7 @@
 import os
 from typing import Union
 import json
-from EasyFileHandling.errors.error import ZeroLineFile
+from EasyFileHandling.errors.error import *
 
 
 class FileHandler:
@@ -120,26 +120,7 @@ class FileHandler:
                 return False
 
 
-class JsonHandler:
-    """JsonHandler it reads, converts and writes but remeber file should be json only!"""
 
-    def __init__(self, _filename):
-        self._filename = _filename
-
-    def write_to_json(self, obj: Union[dict, list]) -> None:
-        """Writes to json file"""
-        with open(self._filename, "w") as f:
-            json.dump(obj, f)
-
-    def append_to_json(self, obj: Union[dict, list]) -> None:
-        """Appends to json file"""
-        with open(self._filename, "a") as f:
-            json.dump(obj, f)
-
-    def read_json_file(self) -> Union[dict, list]:
-        with open(self._filename, "r") as f:
-            x = json.load(f)
-            return x
 
 
 def change_file_name(path: str, new_name: str) -> None:
