@@ -43,7 +43,7 @@ from EasyFileHandling.beta.main import AsyncFileHandler
 
 
 ```py
-from EasyFileHandling.main import JsonHandler
+from EasyFileHandling.json import JsonHandler
 my_obj = [
     {'Sad': 100}
 ]
