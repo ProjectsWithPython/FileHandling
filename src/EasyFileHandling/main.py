@@ -2,6 +2,7 @@ import os
 from typing import Union
 import json
 from EasyFileHandling.errors.error import *
+import hashlib
 
 
 class FileHandler:
@@ -118,8 +119,13 @@ class FileHandler:
                 return True
             else:
                 return False
+    
+    def write_sensitive_data(self, content: Union[bytes, str]) -> str:
+        with open(self._filename, 'w') as f:
+            data = hashlib.sha256(content.encode())
+            f.write(data.hexdigest())
 
-
+    
 
 
 
