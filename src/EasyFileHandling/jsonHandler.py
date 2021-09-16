@@ -10,14 +10,11 @@ class JsonHandler:
 
     def write_to_json(self, obj: Union[dict, list]) -> None:
         """Writes to json file"""
-        try:
-            with open(self._filename, "w") as f:
-                if type(obj) == list or type(obj) == dict:
-                    json.dump(obj, f)
-                else:
-                    raise JSONTakesListOrDict()
-        except:
-            raise FileNotFoundError()
+        with open(self._filename, "w") as f:
+            if type(obj) == list or type(obj) == dict:
+                json.dump(obj, f)
+            else:
+                raise JSONTakesListOrDict()
 
     def append_to_json(self, obj: Union[dict, list]) -> None:
         """Appends to json file"""
@@ -37,3 +34,7 @@ class JsonHandler:
                 return x
         except:
             raise UnexpectedError()
+
+
+x = JsonHandler('./main.json')
+x.write_to_json(1)
