@@ -36,5 +36,3 @@ class JsonHandler:
             raise UnexpectedError()
 
 
-x = JsonHandler('./main.json')
-x.write_to_json(1)
