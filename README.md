@@ -5,7 +5,7 @@
 
 **Getting started**
 ```py
-from EasyFileHandling import FileHandler
+from EasyFileHandling.main import FileHandler
 
 x = FileHandler('test.py', 'py')
 
@@ -43,7 +43,7 @@ from EasyFileHandling.beta.main import AsyncFileHandler
 
 
 ```py
-from EasyFileHandling import ImageHandler
+from EasyFileHandling.imagehandler import ImageHandler
 x = ImageHandler('nice.jpg')
 x.filter_image('blur') # it will make a imagehandlerimages folder with this file in it.
 x.draw_text(100, 50, "Hello World",50, rgb=(0, 0, 0), font="arial.ttf") # rgb and font are default params.
