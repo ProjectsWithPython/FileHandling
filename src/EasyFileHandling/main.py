@@ -95,6 +95,13 @@ class FileHandler:
             ".rb": "Ruby",
             ".swift": "Swift",
             ".txt": "Text",
+            ".java": "Java",
+            ".jsp": "Java",
+            ".go": "Go Lang",
+            ".dart": "Dart",
+            ".php": "PHP",
+            ".xml": "XML",
+            ".scss": "SASS"
         }
 
         if self._extension not in fileTypes:

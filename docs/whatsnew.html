@@ -55,17 +55,19 @@
 
             <h3>Whats New?</h3>
             <p><i>
-                Howdy, new version 1.4.0 just dropped. You all be thinking whats new byte and json support added. We have also added type hints. Let me show you a example how json handler works
+                Howdy, new version 1.5.0 just dropped. You all be thinking whats new?
             </i></p>
-            <p>JsonHandler</p>
+            <i><p>
+                We haved added <code>ImageHandler</code> which writes on image and applies filters using <code>PIL</code> package. Lets see how it works
+            </p></i>
+            <p>ImageHandler</p>
             <pre>
                 <code class="language-python">
-                    from EasyFileHandling.main import JsonHandler
-                    my_obj = [
-                        {'Sad': 100}
-                    ]
-                    x = JsonHandler('sad.json')
-                    x.write_to_json(obj)
+                    from EasyFileHandling import ImageHandler
+                    x = ImageHandler('nice.jpg')
+                    x.filter_image('blur')
+                    x.draw_text(100, 50, "Hello World",50, rgb=(0, 0, 0), font="arial.ttf") # rgb and font are default params.
+                    # it will make a imagehandlerimages folder with this file in it.
                 </code>
             </pre>
 
@@ -81,8 +83,8 @@
         <ul class="">
             <li class="li"><a href="https://github.com/ProjectsWithPython/FileHandling">Github for python</a></li>
             <li class="li"><a href="https://github.com/Haider-Ali-Dev/easyfilehandler.js">Github for javascript</a></li>
-            <li class="li"><a href="https://pypi.org/project/EasyFileHandling/">Npm Package</a></li>
-            <li class="li"><a href="https://www.npmjs.com/package/easyfilehandler.js">Pypi Package</a></li>
+            <li class="li"><a href="https://www.npmjs.com/package/easyfilehandler.js">Npm Package</a></li>
+            <li class="li"><a href="https://pypi.org/project/EasyFileHandling/"">Pypi Package</a></li>
         </ul>
         <div class="buffer"></div>
 

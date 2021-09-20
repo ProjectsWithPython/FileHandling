@@ -5,7 +5,7 @@
 
 **Getting started**
 ```py
-from EasyFileHandling.main import FileHandler
+from EasyFileHandling import FileHandler
 
 x = FileHandler('test.py', 'py')
 
@@ -15,7 +15,7 @@ print(x.get_file_content()) # This will print file content.
 **Whats so special about package**
 
 
-*This lets you use `os` module easily not all features but some of them.
+*It lets to handle files easliy, whether is JSON, a image, text file and etc.*
 
 
 **BETA**
@@ -39,16 +39,14 @@ from EasyFileHandling.beta.main import AsyncFileHandler
 *Howdy, new version `1.4.0` just dropped. You all be thinking whats new `byte` and `json` support added. We have also added `type` hints. Let me show you a example how json handler works*
 
 
-**JsonHandler**
+**ImageHandler**
 
 
 ```py
-from EasyFileHandling.jsonHandler import JsonHandler
-my_obj = [
-    {'Sad': 100}
-]
-x = JsonHandler('sad.json')
-x.write_to_json(obj)
+from EasyFileHandling import ImageHandler
+x = ImageHandler('nice.jpg')
+x.filter_image('blur') # it will make a imagehandlerimages folder with this file in it.
+x.draw_text(100, 50, "Hello World",50, rgb=(0, 0, 0), font="arial.ttf") # rgb and font are default params.
 ```
 
 
