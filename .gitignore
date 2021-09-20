@@ -3,7 +3,7 @@ __pycache__/
 
 pyproject.toml
 
-setup.cfg
+setup.py
 
 src/EasyFileHandling.egg-info
 
