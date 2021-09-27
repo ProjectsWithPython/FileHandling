@@ -1,7 +1,7 @@
 from PIL import Image, ImageFilter, ImageDraw, ImageFont # image manipulation
 import os # For dir making
 import secrets # For Handling FileExisting Error
-
+import cv2
 
 
 class ImageHandler:
@@ -11,10 +11,10 @@ class ImageHandler:
         if not os.path.exists('./imagesfromimagehandler'):
             os.makedirs("./imagesfromimagehandler")
 
-    def filter_image(self, option):
+    def filter_image(self, option, size = (64, 64):
         """"""
         image = Image.open(self._image_file)
-        options = ['blur', 'contour', 'detail', 'edge_enhance', 'emboss', 'edge_enhance_more', 'find_edges', 'sharpen', 'smooth', 'smooth_more']
+        options = ['blur', 'contour', 'detail', 'edge_enhance', 'emboss', 'edge_enhance_more', 'find_edges', 'sharpen', 'smooth', 'smooth_more', 'color_2_grayscale', 'color_2_HSV', 'resize']
         if option in options:
             if option == options[0]:
                 new_image = image.filter(ImageFilter.BLUR)
@@ -54,6 +54,27 @@ class ImageHandler:
                 new_image.save(f'./imagesfromimagehandler/{options[8]}Image{token}{self._image_file_extension}')
             elif option == options[9]:
                 new_image = image.filter(ImageFilter.SMOOTH_MORE)
+                token = secrets.token_urlsafe(4)
+                new_image.save(f'./imagesfromimagehandler/{options[9]}Image{token}{self._image_file_extension}')
+            elif option == options[10]:
+                numpy_image=numpy.array(image)
+                new_image = cv2.cvtColor(numpy_image, cv2.COLOR_RGB2BGR) # converting PIL object to cv2 
+                new_image = cv2.cvtColor(numpy_image, cv2.COLOR_RGB2GRAY) # converting to GRAYSCALE
+                new_image=Image.fromarray(new_image)
+                token = secrets.token_urlsafe(4)
+                new_image.save(f'./imagesfromimagehandler/{options[9]}Image{token}{self._image_file_extension}')
+            elif option == options[11]:
+                numpy_image=numpy.array(image)
+                new_image = cv2.cvtColor(numpy_image, cv2.COLOR_RGB2BGR)  # converting PIL image to cv2 
+                new_image = cv2.cvtColor(numpy_image, cv2.COLOR_BGR2HSV)  # converting to HSV
+                new_image=Image.fromarray(new_image)
+                token = secrets.token_urlsafe(4)
+                new_image.save(f'./imagesfromimagehandler/{options[9]}Image{token}{self._image_file_extension}')
+            elif option == options[12]:
+                numpy_image=numpy.array(image)
+                new_image = cv2.cvtColor(numpy_image, cv2.COLOR_RGB2BGR)
+                new_image = cv2.reshape(new_image, size) # here the size is set to a default of 64, 64, x where x ==3 for RGB and 1 for GRAYSCALE
+                new_image=Image.fromarray(new_image)
                 token = secrets.token_urlsafe(4)
                 new_image.save(f'./imagesfromimagehandler/{options[9]}Image{token}{self._image_file_extension}')
             else:
