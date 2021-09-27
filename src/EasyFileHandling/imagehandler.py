@@ -2,7 +2,7 @@ from PIL import Image, ImageFilter, ImageDraw, ImageFont # image manipulation
 import os # For dir making
 import secrets # For Handling FileExisting Error
 import cv2
-
+import numpy
 
 class ImageHandler:
     def __init__(self, _image_file:str) -> None:
@@ -11,7 +11,7 @@ class ImageHandler:
         if not os.path.exists('./imagesfromimagehandler'):
             os.makedirs("./imagesfromimagehandler")
 
-    def filter_image(self, option, size = (64, 64):
+    def filter_image(self, option, size = (64, 64)):
         """"""
         image = Image.open(self._image_file)
         options = ['blur', 'contour', 'detail', 'edge_enhance', 'emboss', 'edge_enhance_more', 'find_edges', 'sharpen', 'smooth', 'smooth_more', 'color_2_grayscale', 'color_2_HSV', 'resize']
