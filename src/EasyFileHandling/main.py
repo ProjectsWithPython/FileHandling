@@ -50,8 +50,10 @@ class FileHandler:
                 if len(line) > longest_line:
                     longest_line = len(line)
 
-            longest_index_list = [index for index, line in enumerate(lines) if len(line) == longest_line]
-            
+            longest_index_list = []
+            for index, line in enumerate(lines):
+                if len(line) == longest_line:
+                    longest_index_list.append(index)
 
             return f'Longest line is {longest_line} at line index of {longest_index_list}'
 
